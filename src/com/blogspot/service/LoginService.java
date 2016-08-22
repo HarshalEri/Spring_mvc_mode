@@ -15,6 +15,8 @@ public class LoginService {
 	
 	@Transactional
 	public boolean validateuser(UserTbl userInfo){
+		System.out.println("In login Service...");
+		System.out.println(userInfo.getUserid());
 		UserTbl userDetailsFromDb = userDao.getUserDetails(userInfo.getUserid());
 		if(userDetailsFromDb !=null && userInfo.getPassword() == userDetailsFromDb.getPassword())
 			return true;

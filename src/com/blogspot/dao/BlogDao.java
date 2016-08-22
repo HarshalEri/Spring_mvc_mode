@@ -31,6 +31,7 @@ public class BlogDao {
 		Session session = sessionFactory.getCurrentSession();
 		Criteria criteria = session.createCriteria(UserTbl.class);
 		criteria.addOrder(Order.desc("userid"));
+		System.out.println("getAllBlogs called...");
 		return criteria.list();
 	}
 	
