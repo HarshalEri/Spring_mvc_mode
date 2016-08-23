@@ -1,5 +1,8 @@
 package com.blogspot.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class UserModel {
 	private int userId;
 	private String password;

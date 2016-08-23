@@ -6,20 +6,18 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.blogspot.model.BlogTbl;
+import com.blogspot.entities.BlogTbl;
 import com.blogspot.model.UserModel;
-import com.blogspot.model.UserTbl;
 import com.blogspot.service.BlogService;
 import com.blogspot.service.LoginService;
 
 
 @Controller
-@Scope("session")
 public class LoginController {
 	
 	@Autowired
@@ -43,14 +41,13 @@ public class LoginController {
 		}
 		blogList.addAll(list);
 		
-		
 		return new ModelAndView("home","userLogin",new UserModel());
 	}
 	
 	@RequestMapping("/login")
-	public String doLogin(UserTbl userInfo){
+	public String doLogin(UserModel userInfo){
 		System.out.println("doLogin() called...");
-		if(loginService.validateuser(userInfo))
+		if(loginService.validateuser(userInfo) == true)
 			return "welcome";
 		else
 			return "redirect:signIn";

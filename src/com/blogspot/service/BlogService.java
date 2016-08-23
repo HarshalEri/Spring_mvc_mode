@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.blogspot.dao.BlogDao;
-import com.blogspot.model.BlogTbl;
+import com.blogspot.entities.BlogTbl;
 
 @Transactional
 @Service

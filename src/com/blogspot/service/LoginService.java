@@ -5,7 +5,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.blogspot.dao.UserDao;
-import com.blogspot.model.UserTbl;
+import com.blogspot.entities.UserTbl;
+import com.blogspot.model.UserModel;
 
 @Service
 public class LoginService {
@@ -14,11 +15,12 @@ public class LoginService {
 	private UserDao userDao;
 	
 	@Transactional
-	public boolean validateuser(UserTbl userInfo){
+	public boolean validateuser(UserModel userInfo){
 		System.out.println("In login Service...");
-		System.out.println(userInfo.getUserid());
-		UserTbl userDetailsFromDb = userDao.getUserDetails(userInfo.getUserid());
-		if(userDetailsFromDb !=null && userInfo.getPassword() == userDetailsFromDb.getPassword())
+		System.out.println(userInfo.getUserId());
+		UserTbl userDetailsFromDb = userDao.getUserDetails(userInfo.getUserId());
+		System.out.println(userDetailsFromDb);
+		if(userInfo.getPassword().equalsIgnoreCase(userDetailsFromDb.getPassword()))
 			return true;
 		else
 			return false;

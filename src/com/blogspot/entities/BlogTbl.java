@@ -1,4 +1,4 @@
-package com.blogspot.model;
+package com.blogspot.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -31,17 +31,27 @@ public class BlogTbl implements Serializable {
 	private String blogtitle;
 
 	//bi-directional many-to-one association to UserTbl
-	@ManyToOne(cascade={CascadeType.ALL})
+	@ManyToOne(fetch=FetchType.EAGER,cascade={CascadeType.ALL})
 	@JoinColumn(name="userid")
 	private UserTbl userTbl;
 
 	//bi-directional many-to-one association to CommentTbl
-	@OneToMany(mappedBy="blogTbl",cascade={CascadeType.ALL})
+	@OneToMany(mappedBy="blogTbl", fetch=FetchType.EAGER,cascade={CascadeType.ALL})
 	private List<CommentTbl> commentTbls;
 
 	public BlogTbl() {
 	}
 
+	public BlogTbl(int blogid, String blogcategory, String blogcontent, Date blogdate, String blogtitle,
+			UserTbl userTbl, List<CommentTbl> commentTbls) {
+		this.blogid = blogid;
+		this.blogcategory = blogcategory;
+		this.blogcontent = blogcontent;
+		this.blogdate = blogdate;
+		this.blogtitle = blogtitle;
+		this.userTbl = userTbl;
+		this.commentTbls = commentTbls;
+	}
 	public int getBlogid() {
 		return this.blogid;
 	}
@@ -112,16 +122,14 @@ public class BlogTbl implements Serializable {
 		return commentTbl;
 	}
 
-	public BlogTbl(int blogid, String blogcategory, String blogcontent, Date blogdate, String blogtitle,
-			UserTbl userTbl, List<CommentTbl> commentTbls) {
-		this.blogid = blogid;
-		this.blogcategory = blogcategory;
-		this.blogcontent = blogcontent;
-		this.blogdate = blogdate;
-		this.blogtitle = blogtitle;
-		this.userTbl = userTbl;
-		this.commentTbls = commentTbls;
+	@Override
+	public String toString() {
+		return "BlogTbl [blogid=" + blogid + ", blogcategory=" + blogcategory + ", blogcontent=" + blogcontent
+				+ ", blogdate=" + blogdate + ", blogtitle=" + blogtitle + ", userTbl=" + userTbl + ", commentTbls="
+				+ commentTbls + "]";
 	}
+
+	
 
 	
 }

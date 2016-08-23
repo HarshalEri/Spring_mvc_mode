@@ -59,7 +59,7 @@
 		<s:form method="post"  >
 			<h3 align="center"></h3>
 					<table align="center" border="0">
-						<%-- <c:forEach var="blog" items="${sessionScope.blogList}">
+						 <c:forEach var="blog" items="${sessionScope.blogList}">
 							<tr>
 								<td><b>Category:</b></td>
 								<td>${blog.blogcategory}</td>
@@ -83,7 +83,7 @@
 								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 							</tr>
 						</c:forEach>
- --%>					</table>
+				</table>
 
 				</s:form>
 		</p>

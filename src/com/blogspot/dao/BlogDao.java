@@ -11,9 +11,9 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.blogspot.model.BlogTbl;
-import com.blogspot.model.CommentTbl;
-import com.blogspot.model.UserTbl;
+import com.blogspot.entities.BlogTbl;
+import com.blogspot.entities.CommentTbl;
+import com.blogspot.entities.UserTbl;
 
 @Repository
 public class BlogDao {
@@ -29,10 +29,18 @@ public class BlogDao {
 	
 	public List<BlogTbl> getAllBlogs() {
 		Session session = sessionFactory.getCurrentSession();
-		Criteria criteria = session.createCriteria(UserTbl.class);
-		criteria.addOrder(Order.desc("userid"));
+	/*	Criteria criteria = session.createCriteria(BlogTbl.class);
+		criteria.addOrder(Order.desc("blogid"));
 		System.out.println("getAllBlogs called...");
-		return criteria.list();
+		List<BlogTbl> list = criteria.list();
+		return criteria.list();*/
+		Query query = session.getNamedQuery("BlogTbl.findAll");
+		List<BlogTbl> list = query.list();
+		for (BlogTbl blogTbl :list ) {
+			System.out.println(blogTbl);
+		}
+		 return query.list();
+		
 	}
 	
 	public List<BlogTbl> getAllUserBlogs(int userid){	

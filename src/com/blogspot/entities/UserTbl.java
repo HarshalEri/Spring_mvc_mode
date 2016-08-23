@@ -1,4 +1,4 @@
-package com.blogspot.model;
+package com.blogspot.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
