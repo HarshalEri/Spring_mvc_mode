@@ -53,15 +53,14 @@
 		<p>&nbsp;</p>
 		<div class="container">
   <br>		
-		<!-- <div id="content"> -->
+		<div id="content">
 	    <p>
-	    <!-- <div align="center"> -->
-		<s:form method="post"  >
-			<h3 align="center"></h3>
+	   <div align="center">
+			<h3 align="center">Test</h3>
 					<table align="center" border="0">
-						 <c:forEach var="blog" items="${sessionScope.blogList}">
+						 <c:forEach var="blog" items="${blogList}">
 							<tr>
-								<td><b>Category:</b></td>
+								<td>Category:</td>
 								<td>${blog.blogcategory}</td>
 								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 								<td colspan="2">
@@ -84,9 +83,9 @@
 							</tr>
 						</c:forEach>
 				</table>
-
-				</s:form>
+				</div>
 		</p>
+		</div>
 	    <div id="footer">
 	    <div id="copyright">&copy; 2015 All Rights Reserved. Designed by Dinesh & Harshal.</div>
 </div>

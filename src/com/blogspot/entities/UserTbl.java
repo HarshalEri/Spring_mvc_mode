@@ -44,7 +44,7 @@ public class UserTbl implements Serializable {
 	private String state;
 
 	//bi-directional many-to-one association to BlogTbl
-	@OneToMany(mappedBy="userTbl", fetch=FetchType.EAGER,cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="userTbl", fetch=FetchType.LAZY,cascade=CascadeType.ALL)
 	private List<BlogTbl> blogTbls;
 
 	public UserTbl() {
@@ -190,6 +190,6 @@ public class UserTbl implements Serializable {
 		return "UserTbl [userid=" + userid + ", age=" + age + ", city=" + city + ", contactno=" + contactno
 				+ ", country=" + country + ", dob=" + dob + ", emailid=" + emailid + ", firstname=" + firstname
 				+ ", gender=" + gender + ", lastname=" + lastname + ", password=" + password + ", state=" + state
-				+ ", blogTbls=" + blogTbls + "]";
+				+ "]";
 	}
 }

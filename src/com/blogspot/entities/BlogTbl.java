@@ -31,12 +31,12 @@ public class BlogTbl implements Serializable {
 	private String blogtitle;
 
 	//bi-directional many-to-one association to UserTbl
-	@ManyToOne(fetch=FetchType.EAGER,cascade={CascadeType.ALL})
+	@ManyToOne(fetch=FetchType.LAZY,cascade={CascadeType.ALL})
 	@JoinColumn(name="userid")
 	private UserTbl userTbl;
 
 	//bi-directional many-to-one association to CommentTbl
-	@OneToMany(mappedBy="blogTbl", fetch=FetchType.EAGER,cascade={CascadeType.ALL})
+	@OneToMany(mappedBy="blogTbl", fetch=FetchType.LAZY,cascade={CascadeType.ALL})
 	private List<CommentTbl> commentTbls;
 
 	public BlogTbl() {
@@ -125,8 +125,7 @@ public class BlogTbl implements Serializable {
 	@Override
 	public String toString() {
 		return "BlogTbl [blogid=" + blogid + ", blogcategory=" + blogcategory + ", blogcontent=" + blogcontent
-				+ ", blogdate=" + blogdate + ", blogtitle=" + blogtitle + ", userTbl=" + userTbl + ", commentTbls="
-				+ commentTbls + "]";
+				+ ", blogdate=" + blogdate + ", blogtitle=" + blogtitle + "]";
 	}
 
 	
