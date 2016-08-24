@@ -36,23 +36,22 @@
         </div>
         
         <p>
-		<div>
-            <ul id="navigation">
-                <li class="on"><a href="home">Home</a></li>
-                <li><a href="Registration.jsp">Sign Up</a></li>
-              	<li><a href="category.jsp">Categories</a></li>
-                <li><a href="index.jsp">Admin</a></li>
-                <li><a href="contact.jsp">Contact</a></li>
-                <li><a href="aboutus.jsp">About Us</a></li>
-
-
-                </ul>
-		</div>
+			<div>
+	            <ul id="navigation">
+	                <li class="on"><a href="home">Home</a></li>
+	                <li><a href="Registration.jsp">Sign Up</a></li>
+	              	<li><a href="category.jsp">Categories</a></li>
+	                <li><a href="index.jsp">Admin</a></li>
+	                <li><a href="contact.jsp">Contact</a></li>
+	                <li><a href="aboutus.jsp">About Us</a></li>
 	
+	
+	                </ul>
+			</div>
 		</p>
 		<p>&nbsp;</p>
 		<div class="container">
-  <br>		
+  		<br/>		
 		<div id="content">
 	    <p>
 	   <div align="center">
