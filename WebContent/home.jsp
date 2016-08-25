@@ -56,33 +56,33 @@
 	    <p>
 	   <div align="center">
 			<h3 align="center">Test</h3>
-					<table align="center" border="0">
-						 <c:forEach var="blog" items="${blogList}">
-							<tr>
-								<td>Category:</td>
-								<td>${blog.blogcategory}</td>
-								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-								<td colspan="2">
-									<h3>${blog.blogtitle}</h3>
-								</td>
-							</tr>
+			<table align="center" border="0">
+				 <c:forEach var="blog" items="${blogList}">
+					<tr>
+						<td>Category:</td>
+						<td>${blog.blogcategory}</td>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td colspan="2">
+							<h3>${blog.blogtitle}</h3>
+						</td>
+					</tr>
 
-							<tr>
-								<td><b> Id: </b></td>
-								<td>${blog.blogid}</td>
-								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-								<td rowspan="3" colspan="2">
-									${blog.blogcontent}
-								</td>
-							</tr>
-							<tr>
-								<td><b> Posted on: </b></td>
-								<td>${blog.blogdate}</td>
-								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-							</tr>
-						</c:forEach>
-				</table>
-				</div>
+					<tr>
+						<td><b> Id: </b></td>
+						<td>${blog.blogid}</td>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td rowspan="3" colspan="2">
+							${blog.blogcontent}
+						</td>
+					</tr>
+					<tr>
+						<td><b> Posted on: </b></td>
+						<td>${blog.blogdate}</td>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
 		</p>
 		</div>
 	    <div id="footer">

@@ -48,8 +48,14 @@ public class LoginController {
 	public String doLogin(UserModel userInfo){
 		System.out.println("doLogin() called...");
 		if(loginService.validateuser(userInfo) == true)
-			return "welcome";
+			return "redirect:userpage";
 		else
 			return "redirect:signIn";
+	}
+	
+	@RequestMapping("/userpage")
+	public String goToUserPage(){
+		//TODO : Add business logic to display all user blogs on user  page
+		return "";
 	}
 }
